@@ -4,7 +4,8 @@ import { set_sidebar } from './utils/auto-gen-sidebar.js'
 
 // https://vitepress.dev/reference/site-config
 export default withMermaid(defineConfig({
-  base: '/vitepress/',
+  // base: '/vitepress/',
+  base: '/my-vitepress-site/',
   lang: 'zh-CN',
   title: "Scandinavia Luke的VitePress项目",
   description: "一个Scandinavia Luke的VitePress站点",
