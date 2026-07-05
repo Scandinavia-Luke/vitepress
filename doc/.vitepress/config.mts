@@ -7,7 +7,7 @@ export default withMermaid(defineConfig({
   // base: '/vitepress/',
   base: '/my-vitepress-site/',
   lang: 'zh-CN',
-  title: "Scandinavia Luke的VitePress项目",
+  title: "Scandinavia Luke",
   description: "一个Scandinavia Luke的VitePress站点",
   head: [['link', { rel: 'icon', href: '/img/tutorial-64.ico' }]],
   themeConfig: {
