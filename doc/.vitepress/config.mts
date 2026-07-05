@@ -15,6 +15,12 @@ export default withMermaid(defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     outlineTitle: '导航目录',
     outline: [2, 3], // outline定义展示的标题级别，这里定义2-6级标题
+    sidebarMenuLabel: '导航菜单', // 移动端侧边栏菜单按钮文字 
+    // 页面底部上一页/下一页链接文字
+    docFooter: {
+      prev: '上一页',
+      next: '下一页',
+    },
     // 导航栏配置
     nav: [
       { text: '首页', link: '/' },
@@ -49,6 +55,10 @@ export default withMermaid(defineConfig({
     socialLinks: [
       { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
     ],
+    footer: {
+      message: '基于 VitePress 构建',
+      copyright: 'Copyright © 2026 Scandinavia Luke. All rights reserved.',
+    },
     // 搜索功能
     search: {
       provider: 'local',
