@@ -5,7 +5,8 @@ layout: home
 hero:
   name: "Scandinavia Luke"
   # text: "这是一个 VitePress 项目"
-  tagline: 这是一个Scandinavia Luke的VitePress项目，用于展示 VitePress 的使用
+  tagline: 这是一个Scandinavia Luke的VitePress项目，用于展示 VitePress 的使用方法
+  image: "/img/tutorial.svg"
   actions:
     - theme: brand
       text: Markdown 示例
