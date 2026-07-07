@@ -1,6 +1,6 @@
 import { defineConfig } from 'vitepress'
 import { withMermaid } from "vitepress-plugin-mermaid"
-import { set_sidebar } from './utils/auto-gen-sidebar.js'
+import { set_sidebar } from './utils/auto-gen-sidebar.ts'
 
 // https://vitepress.dev/reference/site-config
 export default withMermaid(defineConfig({
@@ -8,14 +8,22 @@ export default withMermaid(defineConfig({
   lang: 'zh-CN',
   title: "Scandinavia Luke",
   description: "一个Scandinavia Luke的VitePress站点",
-  head: [['link', { rel: 'icon', href: '/img/tutorial-64.ico' }]],
+  head: [['link', { rel: 'icon', href: './img/tutorial-64.ico' }]],
   themeConfig: {
-    logo: '/img/vitepress-logo-mini.svg',
+    logo: './img/vitepress-logo-mini.svg',
     // https://vitepress.dev/reference/default-theme-config
     outlineTitle: '导航目录',
     outline: [2, 3], // outline定义展示的标题级别，这里定义2-6级标题
     sidebarMenuLabel: '导航菜单', // 移动端侧边栏菜单按钮文字
     returnToTopLabel: '回到顶部', // 移动端返回顶部按钮文字
+     //上次更新时间
+    lastUpdated: {
+      text: '最后更新于',
+      formatOptions: {
+        dateStyle: 'short', // 可选值full、long、medium、short
+        timeStyle: 'medium' // 可选值full、long、medium、short
+      },
+    },
     // 页面底部上一页/下一页链接文字
     docFooter: {
       prev: '上一页',
@@ -25,13 +33,16 @@ export default withMermaid(defineConfig({
     nav: [
       { text: '首页', link: '/' },
       { text: 'VitePress 示例', link: '/示例/1.markdown-examples' },
-      { text: '教程', link: '/tutorial/config-replace-floor-switch' },
+      { text: '指南', link: '/guide/config-replace-floor-switch' },
       // { text: '配置更换楼层交换机', link: '/config-replace-floor-switch' }
     ],
     // 侧边栏配置
     sidebar: {
-      '/示例': set_sidebar('/示例'),
-      '/tutorial': set_sidebar('/tutorial'),
+      '/示例': set_sidebar('/示例', {
+        collapsed: false,
+        collapsible: false,
+      }),
+      '/guide': set_sidebar('/guide'),
       /* '/示例/': [
         {
           text: 'VitePress 示例',
@@ -42,11 +53,11 @@ export default withMermaid(defineConfig({
           ]
         }
       ],
-      '/tutorial/': [
+      '/guide/': [
         {
-          text: '教程',
+          text: '指南',
           items: [
-            { text: '1.配置更换楼层交换机', link: '/tutorial/config-replace-floor-switch' }
+            { text: '1.配置更换楼层交换机', link: '/guide/config-replace-floor-switch' }
           ]
         }
       ] */
@@ -71,9 +82,10 @@ export default withMermaid(defineConfig({
           modal: {
             noResultsText: '没有找到相关文档',
             resetButtonTitle: '清除查询条件',
+            displayDetails: '显示详情列表',
             footer: {
               selectText: '选择文档',
-              navigateText: '导航到文档',
+              navigateText: '切换文档',
               closeText: '关闭搜索',
             }
           }

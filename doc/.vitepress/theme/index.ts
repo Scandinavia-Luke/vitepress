@@ -1,8 +1,12 @@
 // https://vitepress.dev/guide/custom-theme
 import { h } from 'vue'
-import type { Theme } from 'vitepress'
+import { inBrowser, type Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
+import { NProgress } from 'nprogress-v2/dist/index.js' // 导入进度条
+import 'nprogress-v2/dist/index.css' // 导入进度条样式
+// import busuanzi from 'busuanzi.pure.js/index.js'
 import './style.css'
+import './style/index.css'
 
 export default {
   extends: DefaultTheme,
@@ -13,5 +17,15 @@ export default {
   },
   enhanceApp({ app, router, siteData }) {
     // ...
+    if (inBrowser) {
+      NProgress.configure({ showSpinner: false })
+      router.onBeforeRouteChange = () => {
+        NProgress.start() // 开始进度条
+      }
+      router.onAfterRouteChange = () => {
+        // busuanzi.fetch()
+        NProgress.done()
+      }
+    }
   }
 } satisfies Theme

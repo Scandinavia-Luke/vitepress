@@ -16,7 +16,7 @@ hero:
       link: /示例/2.api-examples
     - theme: alt
       text: 配置更换楼层交换机
-      link: /tutorial/config-replace-floor-switch
+      link: /guide/config-replace-floor-switch
 
 features:
   - title: 功能 A🎉
