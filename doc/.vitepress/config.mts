@@ -1,6 +1,6 @@
 import { defineConfig } from 'vitepress'
 import { withMermaid } from "vitepress-plugin-mermaid"
-import { set_sidebar } from './utils/auto-gen-sidebar.ts'
+import { set_sidebar } from './utils/auto-gen-sidebar.js'
 
 // https://vitepress.dev/reference/site-config
 export default withMermaid(defineConfig({
@@ -8,9 +8,9 @@ export default withMermaid(defineConfig({
   lang: 'zh-CN',
   title: "Scandinavia Luke",
   description: "一个Scandinavia Luke的VitePress站点",
-  head: [['link', { rel: 'icon', href: './img/tutorial-64.ico' }]],
+  head: [['link', { rel: 'icon', href: '/vitepress/img/tutorial-64.ico' }]],
   themeConfig: {
-    logo: './img/vitepress-logo-mini.svg',
+    logo: '/img/vitepress-logo-mini.svg',
     // https://vitepress.dev/reference/default-theme-config
     outlineTitle: '导航目录',
     outline: [2, 3], // outline定义展示的标题级别，这里定义2-6级标题
@@ -39,8 +39,8 @@ export default withMermaid(defineConfig({
     // 侧边栏配置
     sidebar: {
       '/示例': set_sidebar('/示例', {
+        collapsible: true,
         collapsed: false,
-        collapsible: false,
       }),
       '/guide': set_sidebar('/guide'),
       /* '/示例/': [

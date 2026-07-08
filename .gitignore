@@ -1,4 +1,4 @@
 node_modules
-.trae/
-doc/.vitepress/cache/
-doc/.vitepress/dist/
+.trae
+doc/.vitepress/cache
+doc/.vitepress/dist

@@ -53,7 +53,7 @@
 /* 为选中的 .item 添加图标 */
 #VPSidebarNav .VPSidebarItem.is-link > .item::before {
     content: '';
-    background-image: url('/icon/document_word.svg'); /* 图标路径 */
+    background-image: url('/vitepress/icon/svg-file-markdown.svg'); /* 图标路径 */
     width: 16px;
     height: 16px;
     display: inline-block;
